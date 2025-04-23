@@ -1,0 +1,49 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer [mode]="isSmallScreen ? 'over' : 'side'" [opened]="!isSmallScreen">
+        <mat-toolbar color="primary">Menu</mat-toolbar>
+        <mat-nav-list>
+            <a mat-list-item href="#">Dashboard</a>
+            <a mat-list-item href="#">Settings</a>
+            <a mat-list-item href="#">Profile</a>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+
+        </mat-toolbar>
+        <div class="p-2">
+            <h1>Hi User</h1>
+            <div class="flex gap-x-5">
+                <mat-card class="mat-primary">
+                    <mat-card-content>
+                      Primary Themed Card
+                    </mat-card-content>
+                  </mat-card>
+                       
+                <mat-card>
+                    <mat-card-content>Completed</mat-card-content>
+                </mat-card>
+                <mat-card>
+                    <mat-card-content>Inprogress</mat-card-content>
+                </mat-card>
+                <mat-card>
+                    <mat-card-content>Pending</mat-card-content>
+                </mat-card>
+            </div>
+
+            
+        </div>
+
+        <!-- <div>
+           
+        </div> -->
+
+      
+
+
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
