@@ -9,4 +9,16 @@
   .main-content {
     padding: 16px;
   }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-suffix {
+    border-left: none !important;
+    margin-left: 8px; /* optional: give spacing */
+  }
+
+  .custom-nav-item {
+    color: white !important;
+    &:hover {
+      color: #e0e0e0; /* Lighter color on hover */
+    }
+  }
+  
   
