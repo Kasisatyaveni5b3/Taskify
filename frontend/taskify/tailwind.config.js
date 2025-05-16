@@ -1,11 +1,11 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{html,ts}", // 👈 include Angular templates and TS files
-  ],
+  content: ['./src/**/*.{html,ts}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: 'var(--color-primary)',
+        'primary-contrast': 'var(--color-primary-contrast)',
+      },
+    },
   },
-  plugins: [],
-}
-
+};

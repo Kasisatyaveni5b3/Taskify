@@ -15,12 +15,10 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-// Define your palettes
 $primary: mat.define-palette(mat.$indigo-palette);
 $accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 $warn: mat.define-palette(mat.$red-palette);
 
-// Define the theme with your color palettes
 $custom-theme: mat.define-light-theme((
   color: (
     primary: $primary,
@@ -29,5 +27,11 @@ $custom-theme: mat.define-light-theme((
   )
 ));
 
-// Include Material component themes
 @include mat.all-component-themes($custom-theme);
+
+:root {
+  --color-primary: #{mat.get-color-from-palette($primary)};
+  --color-primary-contrast: #{mat.get-color-from-palette($primary, default-contrast)};
+  --color-accent: #{mat.get-color-from-palette($accent)};
+  --color-warn: #{mat.get-color-from-palette($warn)};
+}

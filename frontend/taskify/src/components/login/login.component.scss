@@ -1,0 +1,15 @@
+.d-h-100 {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  padding: 5rem;         
+  box-sizing: border-box; 
+}
+
+mat-card {
+  width: 35rem;
+  height:26rem;    
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}

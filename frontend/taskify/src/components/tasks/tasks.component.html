@@ -41,6 +41,7 @@
             <mat-card-content class="flex items-center gap-3 py-4 px-[3.5rem]">
               <i class="fa-regular fa-clock text-2xl text-gray-500 mr-2"></i>
               <span class="text-xl">Pending</span>
+              <span class="text-xl flex">{{status.pending}}</span>
             </mat-card-content>
           </mat-card>
         </div>
@@ -49,10 +50,13 @@
         <div class="flex gap-6 items-center pt-6 border border-gray-300 p-4">
           <!-- Select Field -->
           <div class="flex items-center border border-gray-300 rounded-md px-[3.5rem] h-12 w-full max-w-xs bg-white shadow-sm">
-            <select class="outline-none flex-grow bg-transparent text-base">
-              <option value="volvo">Volvo</option>
-              <option value="audi">Audi</option>
+            <select (change)="onTaskNameChange($event)">
+              <option *ngFor="let task of taskName" [value]="task">
+                {{ task }}
+              </option>
             </select>
+            
+
           </div>
   
           <!-- Input Field -->
@@ -75,45 +79,17 @@
                   <th class="px-6 py-3 text-sm font-medium text-gray-700">Task Name</th>
                   <th class="px-6 py-3 text-sm font-medium text-gray-700">Status</th>
                   <th class="px-6 py-3 text-sm font-medium text-gray-700">Due Date</th>
-                  <th class="px-6 py-3 text-sm font-medium text-gray-700">Actions</th> <!-- Added Actions Column -->
+                  <th class="px-6 py-3 text-sm font-medium text-gray-700">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="border-b">
-                  <td class="px-6 py-4 text-sm text-gray-700">001</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">Task A</td>
-                  <td class="px-6 py-4 text-sm text-green-500">Completed</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">2025-04-30</td>
+                <tr class="border-b" *ngFor="let res of task">
+                  <td class="px-6 py-4 text-sm text-gray-700">{{res.id}}</td>
+                  <td class="px-6 py-4 text-sm text-gray-700">{{res.task_name}}</td>
+                  <td class="px-6 py-4 text-sm text-green-500">{{res.status}}</td>
+                  <td class="px-6 py-4 text-sm text-gray-700">{{res.end_date}}</td>
                   <td class="px-6 py-4 text-sm text-gray-700">
                     <button class="mr-2">
-                      <i class="fa-solid fa-pen"></i> 
-                    </button>
-                    <button class="">
-                      <i class="fa-solid fa-trash"></i> 
-                    </button>
-                  </td>
-                </tr>
-                <tr class="border-b">
-                  <td class="px-6 py-4 text-sm text-gray-700">002</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">Task B</td>
-                  <td class="px-6 py-4 text-sm text-yellow-500">In Progress</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">2025-05-10</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">
-                    <button class="mr-2">
-                      <i class="fa-solid fa-pen"></i> 
-                    </button>
-                    <button class="">
-                      <i class="fa-solid fa-trash"></i> 
-                    </button>
-                  </td>
-                </tr>
-                <tr class="border-b">
-                  <td class="px-6 py-4 text-sm text-gray-700">003</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">Task C</td>
-                  <td class="px-6 py-4 text-sm text-gray-500">Pending</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">2025-06-01</td>
-                  <td class="px-6 py-4 text-sm text-gray-700">
-                    <button class=" mr-2">
                       <i class="fa-solid fa-pen"></i> 
                     </button>
                     <button class="">
