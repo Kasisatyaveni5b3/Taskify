@@ -10,16 +10,14 @@ import { TasksComponent } from '../tasks/tasks.component';
 export class LayoutContainerComponent {
   clicked: boolean = false;
 
-
-  @ViewChild('container') containerref!: ElementRef
-  constructor(private dialog:MatDialog) {}
+  @ViewChild('container') containerref!: ElementRef;
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit() {
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     }
-    
   }
 
   theming(event: any) {
@@ -29,18 +27,14 @@ export class LayoutContainerComponent {
   }
 
   opened(event: any) {
-    if (event.type === 'click') {
-       this.dialog.open(TasksComponent, {
-        width: '20%',
+    this.dialog.open(TasksComponent, {
+      width: '20%',
       height: '100%',
       maxHeight: '100%',
       maxWidth: '100%',
       position: {
-        right: '0px'
+        right: '0px',
       },
-      })
-      this.clicked = !this.clicked;
-     
-    }
+    });
   }
 }

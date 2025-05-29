@@ -1,11 +1,5 @@
-<div
-  [ngClass]="layout === 'horizontal' ? 'flex flex-row flex-wrap gap-x-6' : 'flex flex-col gap-y-4'"
-  class="text-lg"
->
-  <button
-    *ngFor="let topic of topics"
-    class="flex items-center gap-2 p-2 bg-white max-w-max"
-  >
-    <i [class]="topic.icon"></i> {{ topic.label }}
-  </button>
+<div [ngClass]="layout === 'horizontal' ? 'flex flex-row flex-wrap gap-x-6' : 'flex flex-col gap-y-4'" class="text-lg">
+    <button *ngFor="let topic of topics" class="flex items-center gap-2 p-2 dark:hover:bg-gray-700 text-black dark:text-white" (click)="onTopicClick(topic)">
+        <i [class]="topic.icon"></i> {{ topic.label }}
+    </button>
 </div>

@@ -10,8 +10,10 @@ import { LoginComponent } from 'src/components/login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { TopicsComponent } from 'src/components/topics/topics.component';
-
-
+import { JavascriptComponent } from 'src/components/javascript/javascript.component';
+import { AngularComponent } from 'src/components/angular/angular.component';
+import { ReactComponent } from 'src/components/react/react.component';
+import { NodeComponent } from 'src/components/node/node.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TasksComponent } from 'src/components/tasks/tasks.component';
@@ -24,9 +26,11 @@ import { MatListModule } from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { RegisterComponent } from 'src/components/register/register.component';
-
-
+import { ExpressComponent } from 'src/components/express/express.component';
 import { MatInputModule } from '@angular/material/input';
+import { PostgresqlComponent } from 'src/components/postgresql/postgresql.component';
+import { MongodbComponent } from 'src/components/mongodb/mongodb.component';
+import { JavaComponent } from 'src/components/java/java.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,15 @@ import { MatInputModule } from '@angular/material/input';
     LoginComponent,
     RegisterComponent,
     PractiseComponent,
-    TopicsComponent
+    TopicsComponent,
+    JavascriptComponent,
+    AngularComponent,
+    ReactComponent,
+    NodeComponent,
+    ExpressComponent,
+    PostgresqlComponent,
+    MongodbComponent,
+    JavaComponent
   ],
   imports: [
     BrowserModule,
