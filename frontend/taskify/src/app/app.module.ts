@@ -9,6 +9,7 @@ import { LayoutContainerComponent } from 'src/components/layout-container/layout
 import { LoginComponent } from 'src/components/login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TopicsComponent } from 'src/components/topics/topics.component';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
     LayoutContainerComponent,
     LoginComponent,
     RegisterComponent,
-    PractiseComponent
+    PractiseComponent,
+    TopicsComponent
   ],
   imports: [
     BrowserModule,

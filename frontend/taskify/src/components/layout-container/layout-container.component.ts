@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TasksComponent } from '../tasks/tasks.component';
 
@@ -10,6 +10,8 @@ import { TasksComponent } from '../tasks/tasks.component';
 export class LayoutContainerComponent {
   clicked: boolean = false;
 
+
+  @ViewChild('container') containerref!: ElementRef
   constructor(private dialog:MatDialog) {}
 
   ngOnInit() {
@@ -17,6 +19,7 @@ export class LayoutContainerComponent {
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     }
+    
   }
 
   theming(event: any) {
@@ -28,7 +31,7 @@ export class LayoutContainerComponent {
   opened(event: any) {
     if (event.type === 'click') {
        this.dialog.open(TasksComponent, {
-        width: '25%',
+        width: '20%',
       height: '100%',
       maxHeight: '100%',
       maxWidth: '100%',

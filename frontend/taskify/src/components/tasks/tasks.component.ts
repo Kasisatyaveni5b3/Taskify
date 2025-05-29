@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs';
 import { CommService } from 'src/sharedServices/comm.service';
 
@@ -20,7 +21,8 @@ export class TasksComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private cs: CommService
+    private cs: CommService,
+    private dialog:MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -75,5 +77,10 @@ export class TasksComponent {
     });
   }
   
+
+  close() {
+    this.dialog.closeAll();
+    debugger;
+  }
   
 }
