@@ -1,26 +1,12 @@
-# Stage 1: Build Angular app
-FROM node:18-alpine AS build
-
+# Stage 1: Build the Angular application
+FROM node:18 AS build
 WORKDIR /app
-
-# Copy package files and install dependencies
-COPY package*.json ./
-RUN npm install
-
-# Copy all source files
 COPY . .
+RUN npm install
+RUN npm run build
 
-# Build Angular app for production
-RUN npm run build -- --prod
-
-# Stage 2: Serve app with Nginx
+# Stage 2: Serve the app with Nginx
 FROM nginx:alpine
-
-# Copy the built app from Stage 1
-COPY --from=build /app/dist/YOUR_APP_NAME /usr/share/nginx/html
-
-# Expose port 80
+COPY --from=build /app/dist/taskify /usr/share/nginx/html
 EXPOSE 80
-
-# Start Nginx server
 CMD ["nginx", "-g", "daemon off;"]

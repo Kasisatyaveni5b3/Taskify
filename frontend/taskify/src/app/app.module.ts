@@ -1,3 +1,4 @@
+import { PractiseComponent } from './../components/practise/practise.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatCardModule} from '@angular/material/card';
@@ -31,7 +32,8 @@ import { MatInputModule } from '@angular/material/input';
     NavComponent,
     LayoutContainerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PractiseComponent
   ],
   imports: [
     BrowserModule,
