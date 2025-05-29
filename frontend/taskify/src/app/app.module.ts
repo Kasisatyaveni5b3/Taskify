@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutContainerComponent } from 'src/components/layout-container/layout-container.component';
 import { LoginComponent } from 'src/components/login/login.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,7 +52,8 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     FontAwesomeModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

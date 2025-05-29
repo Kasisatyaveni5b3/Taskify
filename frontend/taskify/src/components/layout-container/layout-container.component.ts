@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { TasksComponent } from '../tasks/tasks.component';
 
 @Component({
   selector: 'app-layout-container',
@@ -7,6 +9,8 @@ import { Component } from '@angular/core';
 })
 export class LayoutContainerComponent {
   clicked: boolean = false;
+
+  constructor(private dialog:MatDialog) {}
 
   ngOnInit() {
     const theme = localStorage.getItem('theme');
@@ -22,10 +26,18 @@ export class LayoutContainerComponent {
   }
 
   opened(event: any) {
-    debugger;
     if (event.type === 'click') {
+       this.dialog.open(TasksComponent, {
+        width: '25%',
+      height: '100%',
+      maxHeight: '100%',
+      maxWidth: '100%',
+      position: {
+        right: '0px'
+      },
+      })
       this.clicked = !this.clicked;
-      console.log('Toggled:', this.clicked ? 'Opened' : 'Closed');
+     
     }
   }
 }
